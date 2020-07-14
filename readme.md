@@ -10,23 +10,41 @@ npm install
 ```
 
 ## Manage environement
+####  Developement
 ```bash
 cp env/.env env/.env.dev
+```
+- set NODE_ENV=development
+
+#### Production
+```bash
 cp env/.env env/.env.prod
 ```
+- set NODE_ENV=production
 
 ## Update JWT_TOKEN
 
 You must generate a new JWT_TOKEN in .env.dev and .env.prod
 
-## Run
+## Migrate
+```bash
+npm run dev:db:migrate
+```
 
-Development :
+## Seed
+```bash
+npm run dev:db:seed
+```
+
+## Run
+#### Development
 ```bash
 npm run dev
 ```
 
-Production :
+- Go to http://localhost:4000
+
+#### Production
 ```bash
 npm run prod
 ```
