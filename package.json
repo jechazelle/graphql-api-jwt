@@ -1,0 +1,57 @@
+{
+  "name": "infinity-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "env-cmd -f ./env/.env.dev nodemon app.js --ext js,graphql --exec babel-node",
+    "prod": "env-cmd -f ./env/.env.prod babel-node app.js",
+    "dev:db:migrate": "env-cmd -f ./env/.env.dev sequelize db:migrate",
+    "dev:db:seed": "env-cmd -f ./env/.env.dev sequelize db:seed:all",
+    "dev:db:test": "env-cmd -f ./env/.env.dev jest --silent --watchAll --runInBand"
+  },
+  "jest": {
+    "globalSetup": "./tests/jest/globalSetup.js",
+    "globalTeardown": "./tests/jest/globalTeardown.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jechazelle/infinity-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jechazelle/infinity-api/issues"
+  },
+  "homepage": "https://github.com/jechazelle/infinity-api#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.4",
+    "apollo-boost": "^0.4.9",
+    "cross-fetch": "^3.0.5",
+    "env-cmd": "^10.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "prettier": "^2.0.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "dependencies": {
+    "apollo-server": "^2.15.1",
+    "bcryptjs": "^2.4.3",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.0"
+  }
+}

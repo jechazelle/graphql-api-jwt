@@ -1,0 +1,10 @@
+# PhpStorm #
+Homestead.yaml
+Homestead.json
+.idea
+
+# Project #
+env/.env.dev
+env/.env.prod
+.DS_Store
+node_modules

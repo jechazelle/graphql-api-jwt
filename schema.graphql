@@ -1,0 +1,41 @@
+type User {
+    id: ID!
+    first_name: String!
+    last_name: String!
+    email: String
+    password: String
+    role: Role!
+}
+
+type Role {
+    id: ID!
+    name: String!
+    code: String!
+}
+
+type Query {
+    me: User!
+    users(query: String): [User!]!
+}
+
+type Mutation {
+    login(data: LoginUserInput): AuthPayload!
+    createUser(data: CreateUserInput): AuthPayload!
+}
+
+input LoginUserInput {
+    email: String!
+    password: String!
+}
+
+input CreateUserInput {
+    first_name: String!
+    last_name: String!
+    email: String!
+    password: String!
+}
+
+type AuthPayload {
+    token: String!
+    user: User!
+}
